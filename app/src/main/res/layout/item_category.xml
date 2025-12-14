@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 外层纵向布局：包含「横向内容栏 + 分隔线」 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
+
+    <!-- 横向内容栏（图标+文字+箭头） -->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center_vertical"
+        android:padding="@dimen/dp_16"
+        android:background="@color/cbjq_text_white">
+
+        <!-- 类型图标 -->
+        <ImageView
+            android:id="@+id/iv_category_icon"
+            android:layout_width="@dimen/dp_40"
+            android:layout_height="@dimen/dp_40"
+            android:scaleType="centerCrop"/>
+
+        <!-- 类型名称 -->
+        <TextView
+            android:id="@+id/tv_category_name"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginStart="@dimen/dp_16"
+            android:textSize="@dimen/text_16"
+            android:textColor="@color/cbjq_text_black"
+            android:textStyle="bold"/>
+
+        <!-- 箭头图标 -->
+        <ImageView
+            android:layout_width="@dimen/dp_24"
+            android:layout_height="@dimen/dp_24"
+            android:src="@drawable/ic_arrow_right"/>
+
+    </LinearLayout>
+
+    <!-- 分隔线（纵向布局，作为行底部分隔） -->
+    <View
+        android:id="@+id/v_divider"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@color/cbjq_gray"
+        android:layout_marginStart="@dimen/dp_64"/>
+
+</LinearLayout>

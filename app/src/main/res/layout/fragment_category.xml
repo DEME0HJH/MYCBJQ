@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="@color/cbjq_gray"
+    android:padding="@dimen/dp_16">
+
+    <!-- 分类标题 -->
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="资源分类"
+        android:textSize="@dimen/text_20"
+        android:textColor="@color/cbjq_blue"
+        android:textStyle="bold"
+        android:layout_marginBottom="@dimen/dp_16"/>
+
+    <!-- 分类列表（RecyclerView实现纵向列表） -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/rv_category_list"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/cbjq_text_white"
+        android:clipToPadding="false"
+        android:paddingVertical="@dimen/dp_8"
+        android:radius="@dimen/radius_12"/>
+
+</LinearLayout>

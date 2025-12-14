@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 选中状态：引用colors.xml中的选中色 -->
+    <item android:color="@color/bottom_nav_selected" android:state_selected="true"/>
+    <!-- 未选中状态：引用colors.xml中的未选中色 -->
+    <item android:color="@color/bottom_nav_unselected" android:state_selected="false"/>
+</selector>

@@ -16,14 +16,14 @@
         android:textStyle="bold"
         android:layout_marginBottom="@dimen/dp_16"/>
 
-    <!-- 分类列表（RecyclerView实现纵向列表） -->
+    <!-- 原LinearLayout保持不变，仅修改RecyclerView -->
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rv_category_list"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:background="@color/cbjq_text_white"
         android:clipToPadding="false"
-        android:paddingVertical="@dimen/dp_8"
+        android:padding="@dimen/dp_16"
         android:radius="@dimen/radius_12"/>
 
 </LinearLayout>

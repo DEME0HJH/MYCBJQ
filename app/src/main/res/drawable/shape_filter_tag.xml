@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <!-- 选中状态 -->
+    <item android:state_selected="true">
+        <shape android:shape="rectangle">
+            <solid android:color="@color/cbjq_filter_selected"/> <!-- 原选中色 -->
+            <corners android:radius="@dimen/radius_8"/> <!-- 圆角更美观 -->
+        </shape>
+    </item>
+    <!-- 未选中状态 -->
+    <item>
+        <shape android:shape="rectangle">
+            <solid android:color="@color/cbjq_gray_light"/> <!-- 浅灰色背景 -->
+            <corners android:radius="@dimen/radius_8"/>
+            <stroke android:color="@color/cbjq_filter_selected" android:width="1dp"/> <!-- 边框提示 -->
+        </shape>
+    </item>
+</selector>

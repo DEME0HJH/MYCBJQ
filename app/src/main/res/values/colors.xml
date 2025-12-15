@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <!-- ========== 系统默认基础色 ========== -->
+    <!-- ===================== 系统默认基础色 ===================== -->
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="purple_200">#FFBB86FC</color>
@@ -9,30 +9,58 @@
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
 
-    <!-- ========== 底部导航栏专用色 ========== -->
+    <!-- ===================== 底部导航栏专用色 ===================== -->
     <color name="bottom_nav_selected">#FF673AB7</color> <!-- 选中态（紫色） -->
     <color name="bottom_nav_unselected">#99000000</color> <!-- 未选中态（灰色） -->
 
-    <!-- ========== 尘白禁区主题核心色 ========== -->
-    <color name="cbjq_blue">#1E3A8A</color>          <!-- 主蓝（角色板块/选中Tab/定位标签） -->
-    <color name="cbjq_light_blue">#3B82F6</color>    <!-- 浅蓝（武器板块/筛选标签选中） -->
-    <color name="cbjq_purple">#8B5CF6</color>        <!-- 紫（天启板块） -->
-    <color name="cbjq_green">#10B981</color>         <!-- 绿（后勤板块） -->
-    <color name="cbjq_orange">#F97316</color>        <!-- 橙（神格板块） -->
+    <!-- ===================== 尘白禁区主题核心色 ===================== -->
+    <color name="cbjq_blue">#1E3A8A</color>          <!-- 主蓝：角色板块/选中Tab/定位标签 -->
+    <color name="cbjq_light_blue">#3B82F6</color>    <!-- 浅蓝：武器板块 -->
+    <color name="cbjq_purple">#8B5CF6</color>        <!-- 紫：天启板块 -->
+    <color name="cbjq_green">#10B981</color>         <!-- 绿：后勤板块 -->
+    <color name="cbjq_orange">#F97316</color>        <!-- 橙：神格板块 -->
 
-    <!-- ========== 通用背景/文字色 ========== -->
-    <color name="cbjq_gray">#F3F4F6</color>          <!-- 页面整体背景（分类/角色页等） -->
+    <!-- ===================== 通用背景色 ===================== -->
+    <color name="cbjq_gray">#F5F5F5</color>          <!-- 页面整体背景（分类/角色页等） -->
     <color name="cbjq_dark_gray">#1F2937</color>     <!-- 暗黑模式背景 -->
-    <color name="cbjq_text_black">#111827</color>    <!-- 主文字（砖块名称/列表文字） -->
-    <color name="cbjq_text_white">#FFFFFF</color>    <!-- 白色文字（筛选/定位标签） -->
+    <color name="cbjq_gray_light">#E0E0E0</color>    <!-- 浅灰：通用未选中背景/分割线 -->
 
-    <!-- ========== 交互控件专用色 ========== -->
-    <color name="cbjq_filter_selected">#0C7DD5</color> <!-- 筛选标签选中（优先级高于浅蓝） -->
+    <!-- ===================== 通用文字色 ===================== -->
+    <color name="cbjq_text_black">#333333</color>    <!-- 主文字：列表/名称等核心文字 -->
+    <color name="cbjq_text_white">#FFFFFF</color>    <!-- 白色文字：筛选标签/深色背景文字 -->
+    <color name="cbjq_text_gray">#999999</color>     <!-- 次要文字：辅助说明/占位符 -->
+
+    <!-- ===================== 交互控件专用色 ===================== -->
+    <color name="cbjq_filter_selected">#2196F3</color> <!-- 筛选标签选中（优先级最高） -->
     <color name="cbjq_filter_bg">#E5E7EB</color>       <!-- 筛选标签未选中背景 -->
-    <color name="cbjq_tab_selected">#1E3A8A</color>    <!-- Tab栏选中文字/指示器 -->
+    <color name="cbjq_tab_selected">#1E3A8A</color>    <!-- Tab栏选中文字/指示器（复用主蓝） -->
     <color name="cbjq_tab_normal">#9CA3AF</color>      <!-- Tab栏未选中文字 -->
 
-    <!-- ========== 装饰/效果色 ========== -->
+    <!-- ===================== 装饰/效果色 ===================== -->
     <color name="cbjq_card_shadow">#88CBD5E8</color> <!-- 卡片阴影 -->
     <color name="cbjq_shadow">#88000000</color>      <!-- 角色列表名称栏半透明黑 -->
+    <color name="cbjq_yellow">#FFC107</color>        <!-- 黄色：星级/高亮提示 -->
+
+    <!-- ===================== 元素属性专用色 ===================== -->
+    <color name="cbjq_fire">#FF5722</color>          <!-- 火元素 -->
+    <color name="cbjq_electric">#673AB7</color>      <!-- 电元素 -->
+    <color name="cbjq_ice">#03A9F4</color>           <!-- 冰元素 -->
+    <color name="cbjq_thunder">#9C27B0</color>       <!-- 雷元素 -->
+    <color name="cbjq_light">#FFEB3B</color>         <!-- 光元素 -->
+    <color name="cbjq_dark">#607D8B</color>          <!-- 暗元素 -->
+    <color name="cbjq_wind">#4CAF50</color>          <!-- 风元素 -->
+    <color name="cbjq_earth">#795548</color>         <!-- 土元素 -->
+
+    <!-- ===================== 伤害类型专用色 ===================== -->
+    <color name="cbjq_damage_kinetic">#795548</color>    <!-- 动能伤害 -->
+    <color name="cbjq_damage_heat">#FF5722</color>       <!-- 高热伤害 -->
+    <color name="cbjq_damage_cold">#03A9F4</color>       <!-- 低温伤害 -->
+    <color name="cbjq_damage_electric">#673AB7</color>   <!-- 电击伤害 -->
+    <color name="cbjq_damage_special">#9C27B0</color>    <!-- 特异伤害 -->
+
+    <!-- ===================== 属性面板专用色 ===================== -->
+    <color name="cbjq_attr_hp">#F44336</color>           <!-- 生命值 -->
+    <color name="cbjq_attr_attack">#4CAF50</color>       <!-- 攻击力 -->
+    <color name="cbjq_attr_defense">#2196F3</color>      <!-- 防御力 -->
+    <color name="cbjq_attr_crit">#FFC107</color>         <!-- 暴击相关 -->
 </resources>

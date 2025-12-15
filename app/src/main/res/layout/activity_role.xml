@@ -5,7 +5,7 @@
     android:orientation="vertical"
     android:background="@color/cbjq_gray">
 
-    <!-- 顶部搜索栏 -->
+    <!-- 顶部搜索栏（保留不变） -->
     <androidx.appcompat.widget.SearchView
         android:id="@+id/search_view_role"
         android:layout_width="match_parent"
@@ -14,137 +14,174 @@
         android:padding="@dimen/dp_8"
         android:layout_margin="@dimen/dp_8"/>
 
-    <!-- 筛选区（角色专属：定位/星级/元素） -->
+    <!-- 筛选区：核心优化 - 增加HorizontalScrollView支持横向滚动 -->
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:padding="@dimen/dp_8"
+        android:layout_margin="@dimen/dp_8"
         android:background="@color/cbjq_text_white"
-        android:layout_margin="@dimen/dp_8">
+        android:orientation="horizontal"
+        android:padding="@dimen/dp_8">
 
+        <!-- 筛选标题（定位：） -->
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="定位："
-            android:textSize="@dimen/text_14"/>
+            android:textSize="@dimen/text_14"
+            android:layout_gravity="center_vertical"/> <!-- 垂直居中，和标签对齐 -->
 
-        <!-- 定位筛选标签（步枪/狙击枪/冲锋枪/散弹枪/手枪/双持冲锋/弩/弓/格林机枪） -->
+        <!-- 关键：用HorizontalScrollView包裹筛选标签，支持横向滚动 -->
+        <HorizontalScrollView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+        android:scrollbars="none"
+        android:layout_marginStart="@dimen/dp_8">
+
         <LinearLayout
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="horizontal"
-            android:layout_marginStart="@dimen/dp_8">
+            android:gravity="center_vertical"> <!-- 标签垂直居中 -->
 
+            <!-- 修复重复ID问题，每个标签设置唯一ID + 优化选中/未选中样式 -->
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_rifle"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="步枪"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_sniper"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="狙击枪"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_smg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="冲锋枪"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_shotgun"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="散弹枪"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_pistol"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="手枪"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_dual_smg"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="双持冲锋"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_crossbow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="弩"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_bow"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="弓"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
             <TextView
-                android:id="@+id/filter_assault"
+                android:id="@+id/filter_gatling"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginEnd="@dimen/dp_4"
+                android:background="@drawable/shape_filter_tag"
+                android:paddingHorizontal="@dimen/dp_8"
+                android:paddingVertical="@dimen/dp_6"
                 android:text="格林机枪"
-                android:textSize="@dimen/text_14"
-                android:padding="@dimen/dp_6"
-                android:background="@color/cbjq_filter_selected"
                 android:textColor="@color/cbjq_text_white"
-                android:layout_marginEnd="@dimen/dp_4"/>
+                android:textSize="@dimen/text_14"
+                android:clickable="true"
+                android:focusable="true"/>
 
-            <!-- 其他筛选标签... -->
         </LinearLayout>
-    </LinearLayout>
-
-    <!-- 角色网格列表 -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv_role_list"
-        android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"
-        android:padding="@dimen/dp_8"/>
-
+    </HorizontalScrollView>
 </LinearLayout>
+
+    <!-- 角色网格列表（保留不变） -->
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_role_list"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:layout_weight="1"
+            android:padding="@dimen/dp_8"/>
+
+    </LinearLayout>

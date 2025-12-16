@@ -111,7 +111,7 @@ public class RoleActivity extends AppCompatActivity {
         // 点击跳转详情页
         roleAdapter.setOnItemClickListener(roleBean -> {
             Intent intent = new Intent(this, RoleDetailActivity.class);
-            intent.putExtra("role_bean", roleBean);
+            intent.putExtra("role_data", roleBean);
             startActivity(intent);
         });
     }
